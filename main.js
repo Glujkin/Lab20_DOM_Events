@@ -31,3 +31,14 @@ paragraph.style.borderRadius = "8px";
 paragraph.style.borderLeft = "4px solid #f59e0b";
 
 console.log("Содержимое и стили изменены!");
+
+console.log("\n Click Event Handling ");
+
+const clickButton = document.getElementById("clickButton");
+
+clickButton.addEventListener("click", () => {
+    console.log("Кнопка нажата!");
+    clickButton.textContent = "✅ Нажато!";
+    clickButton.style.background = "#10b981";
+    clickButton.style.transform = "scale(1.05)";
+});
