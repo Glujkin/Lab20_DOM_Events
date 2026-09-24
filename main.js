@@ -38,7 +38,27 @@ const clickButton = document.getElementById("clickButton");
 
 clickButton.addEventListener("click", () => {
     console.log("Кнопка нажата!");
-    clickButton.textContent = "✅ Нажато!";
+    clickButton.textContent = " Нажато!";
     clickButton.style.background = "#10b981";
     clickButton.style.transform = "scale(1.05)";
+});
+
+console.log("\n Input and Button Interaction");
+
+const nameInput = document.getElementById("nameInput");
+const greetButton = document.getElementById("greetButton");
+const output = document.getElementById("output");
+
+greetButton.addEventListener("click", () => {
+    const name = nameInput.value.trim();
+
+    if (name !== "") {
+        output.textContent = ` Привет, ${name}! Рады видеть тебя!`;
+        output.className = "output-text success";
+        nameInput.style.borderColor = "#10b981";
+    } else {
+        output.textContent = " Пожалуйста, введите ваше имя!";
+        output.className = "output-text error";
+        nameInput.style.borderColor = "#ef4444";
+    }
 });
