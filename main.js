@@ -88,12 +88,12 @@ registrationForm.addEventListener("submit", (event) => {
     const userAge = document.getElementById("userAge").value;
     const userEmail = document.getElementById("userEmail").value;
 
-    formOutput.textContent = `✅ Форма отправлена!\nИмя: ${userName}\nВозраст: ${userAge}\nEmail: ${userEmail}`;
+    formOutput.textContent = ` Форма отправлена!\nИмя: ${userName}\nВозраст: ${userAge}\nEmail: ${userEmail}`;
     formOutput.className = "output-text success";
 });
 
 
-console.log("\n=== ШАГ 9: Form Validation in JavaScript ===");
+console.log("\n Form Validation in JavaScript ");
 
 registrationForm.addEventListener("submit", (event) => {
     event.preventDefault();

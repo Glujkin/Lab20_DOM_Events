@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамические элементы — Lab 20</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .user-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .user-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .user-item:hover {
+            transform: translateX(5px);
+        }
+        .delete-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .delete-btn:hover {
+            background: #dc2626;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Динамическое создание элементов</h1>
+        <p><strong>Шишкин Тимофей</p>
+
+        <div class="input-section">
+            <h2>Добавить пользователя</h2>
+            <input type="text" id="newUserName" placeholder="Имя пользователя..." class="input-field">
+            <button id="addUserButton" class="btn btn-primary">Добавить</button>
+        </div>
+
+        <h2>Список пользователей</h2>
+        <ul id="userList" class="user-list"></ul>
+
+        <div id="stats" class="stats">Всего пользователей: 0</div>
+    </div>
+
+    <script src="dynamicElements.js"></script>
+</body>
+</html>
