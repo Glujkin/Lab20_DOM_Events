@@ -62,3 +62,16 @@ greetButton.addEventListener("click", () => {
         nameInput.style.borderColor = "#ef4444";
     }
 });
+
+console.log("\n Mini Task with DOM Events ");
+
+const clearButton = document.getElementById("clearButton");
+
+clearButton.addEventListener("click", () => {
+    nameInput.value = "";
+    output.textContent = "";
+    output.className = "output-text";
+    nameInput.style.borderColor = "#e5e7eb";
+    nameInput.focus();
+    console.log("Поля очищены");
+});
