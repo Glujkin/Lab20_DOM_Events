@@ -91,3 +91,43 @@ registrationForm.addEventListener("submit", (event) => {
     formOutput.textContent = `✅ Форма отправлена!\nИмя: ${userName}\nВозраст: ${userAge}\nEmail: ${userEmail}`;
     formOutput.className = "output-text success";
 });
+
+
+console.log("\n=== ШАГ 9: Form Validation in JavaScript ===");
+
+registrationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const userName = document.getElementById("userName").value.trim();
+    const userAge = document.getElementById("userAge").value;
+    const userEmail = document.getElementById("userEmail").value.trim();
+
+   
+    if (userName === "") {
+        formOutput.textContent = " Пожалуйста, введите имя!";
+        formOutput.className = "output-text error";
+        document.getElementById("userName").focus();
+        return;
+    }
+
+   
+    if (userAge === "" || isNaN(userAge) || userAge < 1 || userAge > 120) {
+        formOutput.textContent = " Пожалуйста, введите корректный возраст (1-120)!";
+        formOutput.className = "output-text error";
+        document.getElementById("userAge").focus();
+        return;
+    }
+
+
+    if (userEmail === "" || !userEmail.includes("@")) {
+        formOutput.textContent = " Пожалуйста, введите корректный email!";
+        formOutput.className = "output-text error";
+        document.getElementById("userEmail").focus();
+        return;
+    }
+
+
+    formOutput.textContent = ` Регистрация успешна!\nДобро пожаловать, ${userName}!`;
+    formOutput.className = "output-text success";
+    registrationForm.reset();
+});
