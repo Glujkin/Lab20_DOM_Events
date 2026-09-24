@@ -75,3 +75,19 @@ clearButton.addEventListener("click", () => {
     nameInput.focus();
     console.log("Поля очищены");
 });
+
+console.log("\n Basic HTML Form Handling ");
+
+const registrationForm = document.getElementById("registrationForm");
+const formOutput = document.getElementById("formOutput");
+
+registrationForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // Отменяем стандартную отправку формы
+
+    const userName = document.getElementById("userName").value;
+    const userAge = document.getElementById("userAge").value;
+    const userEmail = document.getElementById("userEmail").value;
+
+    formOutput.textContent = `✅ Форма отправлена!\nИмя: ${userName}\nВозраст: ${userAge}\nEmail: ${userEmail}`;
+    formOutput.className = "output-text success";
+});
